@@ -6,7 +6,7 @@
 /*   By: delvin <delvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 15:55:12 by delvin            #+#    #+#             */
-/*   Updated: 2021/01/05 19:03:40 by delvin           ###   ########.fr       */
+/*   Updated: 2021/01/12 19:54:31 by delvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlen(const char *s)
 	return (count);
 }
 
-char			*ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	char	*str;
 	size_t	i;
@@ -67,7 +67,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 
 	if (!s1 || !s2)
-		return ((char*)s1);
+		return (NULL);
 	size = ft_strlen(s1);
 	size += ft_strlen(s2);
 	str = (char*)malloc(sizeof(char) * (size + 1));
