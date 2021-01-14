@@ -6,7 +6,7 @@
 /*   By: delvin <delvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 20:40:51 by delvin            #+#    #+#             */
-/*   Updated: 2021/01/14 18:21:59 by delvin           ###   ########.fr       */
+/*   Updated: 2021/01/14 19:49:48 by delvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static	int		remind_checker(char **check_rem, char **line)
 	return (0);
 }
 
-static	int		get_line(int *fd, char **line, char **check_rem, char **buf)
+static	int		get_line(int fd, char **line, char **check_rem, char **buf)
 {
 	int		res;
 	char	*putzero;
