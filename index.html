@@ -31,17 +31,18 @@
 	<!-- End Google Tag Manager -->
 	<script>
 	// v 1.09
-	// !!! НЕОБХОДИМО ЗАПОЛНИТЬ !!!
-	// Media Source из Appsflyer
-    var af_media_source = 'test123';
+
+// !!! НЕОБХОДИМО ЗАПОЛНИТЬ !!!
+// Media Source из Appsflyer
+var af_media_source = 'icalb-website';
 // Android Deeplink 
 var android_dp = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/endowmentLifeInsurance/product/calc?productCode=NSZH_TICKETTOFUTURE&programCode=basic&employeeConsultation=1&external_source=SMSCM&firstPayment=1000000&termYear=1&regularityId=ONE';
 // iOS Deeplink 
 var ios_dp = 'sberbankonline://investments/nszh/product/calc?productCode=NSZH_TICKETTOFUTURE&programCode=basic&employeeConsultation=1&external_source=SMSCM&firstPayment=1000000&termYear=1&regularityId=ONE';
 // WEB Deeplink 
-var web_link = 'https://www.sberbank.ru/ru/person/dist_services/inner_apps';
+var web_link = 'https://online.sberbank.ru/CSAFront/index.do#/';
 	// Редирект на WEB при отсутствии приложения – true or false
-	var need_web = false;
+	var need_web = true;
 	if (document.location.href.search('need_web=true')>0) {var need_web = true};
 	
 	
