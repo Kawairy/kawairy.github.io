@@ -159,10 +159,10 @@ if (web_link.toLowerCase().search('sberbank.ru')<0){
 var utm_all=separator_web+web_utm_source+web_utm_medium+web_utm_campaign+web_utm_content+web_utm_term;}
 else {var utm_all = '';}
 	if (af_web_url !=''){
-	var af_android_url = '&af_android_url=' + encodeURIComponent('https://www.sberbank.ru/ru/person/dist_services/inner_apps?cache=no'+other_param_web_url+utm_all)+'&af_param_forwarding=false';
+	var af_android_url = '&af_android_url=' + encodeURIComponent(af_web_url+other_param_web_url+utm_all)+'&af_param_forwarding=false';
 			var af_ios_url = '&af_ios_url=' + encodeURIComponent(af_web_url+other_param_web_url+utm_all)+'&af_param_forwarding=false';
 	} else {
-	var af_android_url = '';
+	var af_android_url = 'https://www.sberbank.ru/ru/person/dist_services/inner_apps?cache=no';
 	var af_ios_url = '';
 	}
 	
