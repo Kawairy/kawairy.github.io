@@ -118,7 +118,14 @@ var ios_af_dp = encodeURIComponent(ios_dp);
 	// Р¤РѕСЂРјРёСЂСѓРµРј РїРµСЂРµРјРµРЅРЅС‹Рµ РґР»СЏ AppMetrica
 	var external_source = 'external_source%3D'+af_media_source+'-_-'+utm_source_sm+'-_-'+utm_medium_sm+'-_-'+utm_campaign_sm+'-_-'+utm_content_plus;
 	external_source = external_source.length > 221 ? external_source.slice(0,221)+'-_-'+ga_uid_sm : external_source+'-_-'+ga_uid_sm;
-
+if (android_af_dp.search(/\?|%3F/) > 0){
+	var is_q_and = '%26';
+} else
+{ var is_q_and = '%3F'};
+if (ios_af_dp.search(/\?|%3F/) > 0){
+	var is_q_ios = '%26';
+} else
+{ var is_q_ios = '%3F'};
 	// Р¤РѕСЂРјРёСЂСѓРµРј РїРµСЂРµРјРµРЅРЅС‹Рµ РґР»СЏ AppsFlyer
 var af_utm_source = utm_source_sm ? '&af_sub1='+utm_source_sm : '';
 var af_utm_medium = utm_medium_sm ? '&af_sub2='+utm_medium_sm : '';
