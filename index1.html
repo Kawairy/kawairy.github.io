@@ -1,5 +1,4 @@
 
-
 <html lang='en'>
     <head>
     <meta charset='UTF-8'>
@@ -17,10 +16,10 @@
     <body>
     <div class='smart_img'><p><br><img src='https://www.sberbank.ru/common/img/uploaded/files/sms/sber_logo_main.png'><br><br><br><br>Запрос обрабатывается. <br><br>Подождите несколько секунд...</p>
     <script>
-    var af_media_source = 'packages-connect';
-    var android_dp = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/packages/connect';
-    var ios_dp = 'sberbankonline://packages/connect';
-    var web_link = 'https://online.sberbank.ru/CSAFront/service.do?srvUrl=/sbtsbol/private/packages';
+    var af_media_source = 'shpa';
+    var android_dp = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/payments/services/init';
+    var ios_dp = 'sberbankonline://payments/services/init';
+    var web_link = 'https://online.sberbank.ru/CSAFront/service.do?srvUrl=%2Fpayments%2Fprovider';
     var need_web = true;
     if (document.location.href.search('need_web=true')>0) {var need_web = true};
     var af_pid = 'pid=' + af_media_source;
@@ -64,9 +63,11 @@
     var other_param_web = '?' + replaceAll(decodeURIComponent(utm_arr.filter(v => v ).join('&')).replace(/[\+\s]/ig, '__'), '&', '%26')
     var other_param_web_url = '&' + replaceAll(decodeURIComponent(utm_arr.filter(v => v ).join('&')).replace(/[\+\s]/ig, '__'), '&', '%26')
     };
-    var ga_uid_fc = getCookie('_ga') || '0.0.0.0';
+    var ga_uid_fc = getCookie('_ga');
+    if (ga_uid_fc && ga_uid_fc != '') {
     var ga_uid_arr = ga_uid_fc.split(/\./);
-    var ga_uid_sm = ("_y_" +getCookie('_ym_uid') + "_d_" +getCookie('___dmpkit___') + "_g_" +ga_uid_arr[2]+'.'+ga_uid_arr[3]).slice(0,90)
+    var ga_uid_sm = ("_y_" +getCookie('_ym_uid') + "_d_" +getCookie('___dmpkit___') + "_g_" +ga_uid_arr[2]+'.'+ga_uid_arr[3]).slice(0,90);
+    };
     var utm_content_plus = utm_content_sm.slice(0,100)+utm_term_sm.slice(0,100);
     var external_source = 'external_source%3D'+af_media_source+'-_-'+utm_source_sm+'-_-'+utm_medium_sm+'-_-'+utm_campaign_sm+'-_-'+utm_content_plus;
     external_source = external_source.length > 221 ? external_source.slice(0,221)+'-_-'+ga_uid_sm : external_source+'-_-'+ga_uid_sm;
@@ -93,20 +94,26 @@
     { var separator_web = '&';}
     if (web_link_other_param_web.toLowerCase().search(/\?/)<0)
     { var separator_web = '?';}
-    if (web_link.toLowerCase().search('sber.ru')<0){
+    if (web_link.toLowerCase().search('sberbank.ru')<0){
     var utm_all=separator_web+web_utm_source+web_utm_medium+web_utm_campaign+web_utm_content+web_utm_term;}
     else {var utm_all = '';}
     if (af_web_url !=''){
-    var af_android_url = '&af_android_url=' + encodeURIComponent(af_web_url+other_param_web_url+utm_all)+'&af_param_forwarding=false';
-    var af_ios_url = '&af_ios_url=' + encodeURIComponent(af_web_url+other_param_web_url+utm_all)+'&af_param_forwarding=false';
+        var redirect_prepare_m = af_web_url+other_param_web_url+utm_all;
+    var af_android_url = '&af_android_url=' + encodeURIComponent(redirect_prepare_m.replace('&cs=', '%3FserviceId%3D'))+'&af_param_forwarding=false';
+    var af_ios_url = '&af_ios_url=' + encodeURIComponent(redirect_prepare_m.replace('&cs=', '%3FserviceId%3D'))+'&af_param_forwarding=false';
     } else {
     var af_android_url = '';
     var af_ios_url = '';
     }
     var redirect_android = 'https://app.appsflyer.com/ru.sberbankmobile'+'?'+af_pid+af_c+'&is_retargeting=true'+'&af_dp='+android_af_dp+is_q_and+other_param_app+external_source+af_utm_source+af_utm_medium+af_utm_campaign+af_utm_content_plus+af_ga_uid_sm+af_android_url;
     var redirect_iphone = 'https://sberbankonline.onelink.me/46WQ'+'?'+'af_force_deeplink=true&'+af_pid+af_c+'&is_retargeting=true'+'&af_dp='+ios_af_dp+is_q_ios+other_param_app+external_source+af_utm_source+af_utm_medium+af_utm_campaign+af_utm_content_plus+af_ga_uid_sm+af_ios_url;
-    var redirect_unknown=web_link+other_param_web+utm_all;
-    function check_platform(ua) {if(/android/gi.test(ua)){return 'android';}if(/iphone|ipod/gi.test(ua)){return 'iPhone';}return  'unknown';}
+    var redirect_unknown = redirect_prepare.replace('&cs=', '%3FserviceId%3D');
+    function check_platform(ua) {
+    if(/android/gi.test(ua))
+    {return 'android';}
+    if(/iphone|ipod/gi.test(ua))
+    {return 'iPhone';}
+    return  'unknown';}
     function redirect_user (address) {setTimeout(function(){window.location.href=address}, 2100);return true;}
     function inform_user (msg) {document.write(msg);return true;}
     var platform=check_platform(navigator.userAgent);
