@@ -14,23 +14,27 @@
 <style type="text/css">.smart_img p{margin: 0;position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%)}p {display: block;align-items: center;text-align: center;}p img { width: 50%;}@media screen and (max-width: 1000px) {p img { width: 70%;}}</style>
 </head>
 <body>
-<div class="smart_img"><p><br><img src="https://www.sberbank.ru/common/img/uploaded/files/sms/sber_logo_main.png"><br><br>
+<div class="smart_img"><p><br><img src="https://www.sberbank.ru/common/img/uploaded/files/sms/sber_logo_main.png"><br><br><br><br>Запрос обрабатывается. <br><br>Подождите несколько секунд...</p>
 
-<p><input type="button" value=" Тут может быть кнопка "></p>
 
 <script>
 
+function redirect_user (address) {
+window.location.href=url_1;
+return true;
+}
 
-var UTM = decodeURIComponent(document.location.href.split('?').pop());
-var utm_arr = UTM.split('&');
+function draw_interface(redirect_url) {
+var output='<div><input type="button" value="' + 'Можно добавить кнопку' + '" class="btn" onclick="redirect_user(\'' + redirect_url  + '\')"></div>';
+document.write(output);
+}
+draw_interface()
 
-setTimeout(function(){
-window.location.href = decodeURIComponent(utm_arr[1])
-},0);
+var url_1 = decodeURIComponent(document.location.href).split('?URL_1=')[1].split('&DP=')[0]
+var dp_1 = decodeURIComponent(document.location.href.split('&DP=')[1].split('&WL')[0])
+var dp_2 = document.location.href.split('&DP=')[1].split('&WL')[0]
+var wl_1 = document.location.href.split('&WL=')[1]
 
-setTimeout(function(){
-window.location.href = "https://kawairy.github.io/NEW_APP/final.html?DP=" + utm_arr[0] + "&WL=" + utm_arr[1];
-},250);
 
 
 </script>
