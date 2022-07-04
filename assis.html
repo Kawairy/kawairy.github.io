@@ -1,4 +1,5 @@
 
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,52 +17,19 @@
 </head>
 <body>
 <div class="smart_img"><p><br><img src="https://www.sberbank.ru/common/img/uploaded/files/sms/sber_logo_main.png"><br><br><br><br>Запрос обрабатывается. <br><br>Подождите несколько секунд...</p>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-21169438-11"></script>
-<!-- Переход в СБОЛ через deeplink -->
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NRDX7Z"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NRDX7Z');
-</script>
-<!-- End Google Tag Manager -->
 <script>
-// v 1.09
-// !!! НЕОБХОДИМО ЗАПОЛНИТЬ !!!
-// Media Source из Appsflyer
-var af_media_source = 'assistance-website';
-
-// Android Deeplink 
-var android_dp = 'android-app://ru.sberbankmobile/connectionassistance';
-
-// iOS Deeplink 
-var ios_dp = 'sberbankonline://connectionassistance';
-
-// WEB Deeplink 
-var web_link = 'https://online.sberbank.ru/CSAFront/service.do?srvUrl=/assistant';
-
-// Редирект на WEB при отсутствии приложения – true or false
+var af_media_source = 'ssdpv';
+var android_dp = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/assistant/launcher?data=%7B%0A%22text%22%20%3A%20%22%D0%9F%D0%B5%D1%80%D0%B5%D0%B2%D0%B5%D0%B4%D0%B8%20%D0%B4%D0%B5%D0%BD%D1%8C%D0%B3%D0%B8%22%0A%7D';
+var ios_dp = 'sberbankonline://voiceassistant/?data=%7B%0A%22text%22%20%3A%20%22%D0%9F%D0%B5%D1%80%D0%B5%D0%B2%D0%B5%D0%B4%D0%B8%20%D0%B4%D0%B5%D0%BD%D1%8C%D0%B3%D0%B8%22%0A%7D';
+var web_link = 'https://www.sberbank.ru/ru/person/dist_services/inner_apps';
 var need_web = true;
-if (document.location.href.search('need_web=true')>0) {var need_web = true};
-// !!! ОКОНЧАНИЕ ЧАСТИ ДЛЯ ЗАПОЛНЕНИЯ !!!
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'UA-21169438-11');
-var productNameGTM = document.location.hostname.replace(/https:\/\/|http:\/\/|www./, '')+document.location.pathname.split('/').join('.').split('?')[0].split('#')[0];
-gtag('event', 'event', {
-'event_category': productNameGTM,
-'event_action': 'show_details',
-'event_label': af_media_source,
-});
+if (document.location.href.search('need_web=true')>0) 
+{var need_web = true}
 </script>
 <script src="https://sberbank.ru/common/img/uploaded/files/sms/smartlink_code/1.js"></script>
 <style>
-body {font-size: 20px; font-family: Arial;}
+ body {font-size: 20px; font-family: Arial;}
 </style>
+<script src="https://sberbank.ru/common/img/uploaded/files/sms/smartlink_code/2.js"></script>
 </body>
 </html>
