@@ -1,5 +1,4 @@
 
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -19,17 +18,16 @@
 <body>
 <div class="smart_img"><p><br><img src="https://www.sberbank.ru/common/img/uploaded/files/sms/sber_logo_main.png"><br><br><br><br>Запрос обрабатывается. <br><br>Подождите несколько секунд...</p>
 <script>
-var af_media_source = 'pushvh';
-var android_dp = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/sberbankid/oidc/auth';
-var ios_dp = 'sberbankonline://sberbankid/oidc/auth';
-var web_link = 'https://online.sberbank.ru/CSAFront/oidc/sberbank_id/authorize.do';
-var need_web = true;
-if (document.location.href.search('need_web=true')>0) 
-{var need_web = true}
+var af_media_source = 'ihome';
+var android_dp = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/welfare/products/efs_insurance?productCode=home_ins2';
+var ios_dp = 'sberbankonline://insurance/sales?productCode=home_ins2';
+var web_link = 'https://www.sberbank.ru/ru/person/bank_inshure/insuranceprogram/protect_home';
+var need_web = false;
+if (document.location.href.search('need_web=true')>0) {var need_web = true};
 </script>
-<script src="https://sberbank.ru/common/img/uploaded/files/sms/smartlink_code/1.js"></script>
+<script src="https://www.sberbank.ru/common/img/uploaded/files/sms/smartlink_code/1.js?cache=no"></script>
 <style>
- body {font-size: 20px; font-family: Arial;}
+body {font-size: 20px; font-family: Arial;}
 </style>
 </body>
 </html>
