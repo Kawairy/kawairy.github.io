@@ -55,7 +55,7 @@
   if (utm_campaign_sm == '') { utm_campaign_sm = utm_cookie_arr[2].replace(/[^a-zA-Z0-9_=-]/g, '').slice(0,200)};
   if (utm_content_sm == '') { utm_content_sm = utm_cookie_arr[3].replace(/[^a-zA-Z0-9_=-]/g, '').slice(0,200)};
   if (utm_term_sm == '') { utm_term_sm = '-_-'+utm_cookie_arr[4].replace(/[^a-zA-Z0-9_=-]/g, '').slice(0,200)};
-  var other_param = encodeURIComponent(utm_arr.filter(v => v ).join('&')).replace(/[\+\s]/ig, ' ');
+  var other_param = encodeURIComponent((utm_arr.filter(v => v ).join('&')).replace(/[\+\s]/ig, ' '));
   function replaceAll(string, search, replace) {
   return string.split(search).join(replace);
   }
