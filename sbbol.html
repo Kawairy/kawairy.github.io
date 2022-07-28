@@ -61,8 +61,8 @@
   }
   if (other_param != '') {
   var other_param_app = other_param + '%26';
-  var other_param_web = '?' + replaceAll(decodeURIComponent(utm_arr.filter(v => v ).join('&')).replace(/[\+\s]/ig, '__'), '&', '%26');
-  var other_param_web_url = decodeURIComponent(utm_arr.filter(v => v ).join('&')).replace(/[\+\s]/ig, '__');
+  var other_param_web = '?' + replaceAll(decodeURIComponent(utm_arr.filter(v => v ).join('&')).replace(/[\+\s]/ig, ' '), '&', '%26');
+  var other_param_web_url = decodeURIComponent(utm_arr.filter(v => v ).join('&')).replace(/[\+\s]/ig, ' ');
   };
   var ga_uid_fc = getCookie('_ga');
   if (ga_uid_fc && ga_uid_fc != '') {
