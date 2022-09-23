@@ -143,7 +143,7 @@ if (platform == "android") {
     }
 } else if (platform == "iPhone") {
     setTimeout(function () {
-        window.location.href = decodeURIComponent('sberbankonline://salaryproject/skzpromoscreen?source=LP' + is_q_ios + other_param_app + external_source).replace(new RegExp("^sberbankonline:\/\/", "gm"), "sbolonline://")
+        window.location.href = decodeURIComponent('sbolonline://salaryproject/skzpromoscreen?source=LP' + is_q_ios + other_param_app + external_source);
     }, 100);
     setTimeout(function () {
         window.location.href = "https://www.sberbank.ru/sms/sl_ios_dp_old?URL_START=" + encodeURIComponent(document.location.href) + "&SL_iOS_DP_OLD=" + ios_af_dp + is_q_ios + other_param_app + external_source + "&SL_WEB_LINK_iOS=" + web_link_web + other_param_web + utm_all;
