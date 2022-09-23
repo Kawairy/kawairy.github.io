@@ -17,6 +17,7 @@
     <body>
     <div class='smart_img'><p><br><img src='https://www.sberbank.ru/common/img/uploaded/files/sms/sber_logo_main.png'><br><br><br><br>Запрос обрабатывается. <br><br>Подождите несколько секунд...</p>
     <script>
+        setTimeout(() => {
     var af_media_source = 'lpkzk';
     var android_dp = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/salaryproject/likesalary/incomeconfirmation?source=LP';
     var ios_dp = 'sberbankonline://personalaccount?type=sc&source=LP';
@@ -116,26 +117,27 @@
     if (platform == "android") {
     setTimeout(function(){
     window.location.href = decodeURIComponent(android_af_dp+is_q_and+other_param_app+external_source).replace(new RegExp("^android-app:\/\/","gm"), "intent://")
-    }, 2100);
+    }, 100);
     setTimeout(function(){
     window.location.href = redirect_unknown;
-    }, 2150);
+    }, 300);
     } else if (platform == "iPhone") {
     setTimeout(function () {
     window.location.href = decodeURIComponent('sberbankonline://salaryproject/likesalary/incomeconfirmation?source=LP'+is_q_ios+other_param_app+external_source).replace(new RegExp("^sberbankonline:\/\/","gm"), "sbolonline://")
-    }, 2100);
+    }, 100);
     setTimeout(function () {
     window.location.href = "https://www.sberbank.ru/sms/sl_ios_dp_old?URL_START=" + encodeURIComponent(document.location.href) + "&SL_iOS_DP_OLD=" + ios_af_dp+is_q_ios+other_param_app+external_source + "&SL_WEB_LINK_iOS=" + redirect_unknown;
-    }, 2300);
+    }, 300);
     setTimeout(function(){
     window.location.href = web_link_web+other_param_web+utm_all;
-    }, 2500);
+    }, 500);
     }
     else {
     setTimeout(function(){
     window.location.href = redirect_unknown;
     }, 2100);
     }   
+        }, 900)
     </script>
     <style>
     body {font-size: 20px; font-family: Arial;}
