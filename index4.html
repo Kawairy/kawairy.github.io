@@ -60,9 +60,9 @@ function replaceAll(string, search, replace) {
 return string.split(search).join(replace);
 }
 if (other_param != '') {
-var other_param_app = other_param + '%26';
-var other_param_web = '?' + replaceAll(decodeURIComponent(utm_arr.filter(v => v ).join('&')).replace(/[\+\s]/ig, '__'), '&', '%26')
-var other_param_web_url = '?' + decodeURIComponent(utm_arr.filter(v => v ).join('&')).replace(/[\+\s]/ig, '__')
+	var other_param_app = other_param + '%26';
+	var other_param_web = '?' + replaceAll(decodeURIComponent(utm_arr.filter(v => v ).join('&')).replace(/[\+\s]/ig, '__'), '&', '%26')
+	var other_param_web_url = '&' + replaceAll(decodeURIComponent(utm_arr.filter(v => v ).join('&')).replace(/[\+\s]/ig, '__'), '&', '%26') 
 };
 var ga_uid_fc = getCookie('_ga');
 if (ga_uid_fc && ga_uid_fc != '') {
@@ -118,7 +118,7 @@ setTimeout(function(){
 window.location.href = decodeURIComponent(android_af_dp+is_q_and+other_param_app+external_source).replace(new RegExp("^android-app:\/\/","gm"), "intent://")
 }, 2100);
 setTimeout(function(){
-window.location.href = web_link+other_param_web_url+utm_all;
+window.location.href = web_link+other_param_web+utm_all;
 }, 2150);
 } else if (platform == "iPhone") {
 setTimeout(function () {
@@ -128,12 +128,12 @@ setTimeout(function () {
 window.location.href = "http://www.sberbank.ru/sms/sl_ios_dp_old?URL_START=" + encodeURIComponent(document.location.href) + "&SL_iOS_DP_OLD=" + ios_af_dp+is_q_ios+other_param_app+external_source + "&SL_WEB_LINK_iOS=" + redirect_unknown;
 }, 2300);
 setTimeout(function(){
-window.location.href = web_link+other_param_web_url+utm_all;
+window.location.href = web_link+other_param_web+utm_all;
 }, 2500);
 }
 else {
 setTimeout(function(){
-window.location.href = web_link+other_param_web_url+utm_all;
+window.location.href = web_link+other_param_web+utm_all;
 }, 2100);
 }
 </script>
