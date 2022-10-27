@@ -1,3 +1,6 @@
+
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -17,9 +20,9 @@
 <body>
 <div class='smart_img'><p><br><img src='https://www.sberbank.ru/common/img/uploaded/files/sms/sber_logo_main.png'><br><br><br><br>Запрос обрабатывается. <br><br>Подождите несколько секунд...</p>
 <script>
-var af_media_source = 'invx2';
-var android_dp = 'sberinvestor://portfolio?from=welcomesms_nti';
-var ios_dp = 'investorx.prod://portfolio?from=welcomesms_nti';
+var af_media_source = 'invport';
+var android_dp = 'sberinvestor://portfolio';
+var ios_dp = 'ru.sberbank.sberinvestor://portfolio';
 var web_link = 'http://www.sberbank.ru/ru/person/investments/invest_apps';
 var need_web = true;
 if (document.location.href.search('need_web=true')>0) 
@@ -111,15 +114,15 @@ setTimeout(function () {
 window.location.href = decodeURIComponent(android_af_dp + is_q_and + other_param_app + external_source).replace(new RegExp("^android-app:\/\/", "gm"), "intent://")
 }, 2100);
 setTimeout(function () {
-window.location.href = 'http://www.sberbank.ru/ru/person/investments/sberinvestor' + other_param_web + utm_all;
-}, 2300);
+window.location.href = 'http://cdn.sberbank.ru/appdistr/SberInvestor_Android.apk';
+}, 2700);
 } else {
 setTimeout(function () {
-window.location.href = decodeURIComponent(android_af_dp + is_q_and + other_param_app + external_source).replace(new RegExp("^android-app:\/\/", "gm"), "intent://") + "#Intent;scheme=android-app;package=ru.sberbankmobile;S.browser_fallback_url=" + web_link_web + other_param_web + utm_all + ";end"
+window.location.href = decodeURIComponent(android_af_dp + is_q_and + other_param_app + external_source).replace(new RegExp("^android-app:\/\/", "gm"), "intent://") + "#Intent;scheme=android-app;package=ru.sberbankmobile;S.browser_fallback_url=" + 'http://cdn.sberbank.ru/appdistr/SberInvestor_Android.apk' + ";end"
 }, 2100);
 setTimeout(function () {
-window.location.href = 'http://www.sberbank.ru/ru/person/investments/sberinvestor' + other_param_web + utm_all;
-}, 2300);
+window.location.href = 'http://cdn.sberbank.ru/appdistr/SberInvestor_Android.apk';
+}, 2700);
 }
 } else {
 setTimeout(function () {
@@ -131,19 +134,20 @@ window.location.href = 'http://www.sberbank.ru/ru/person/investments/sberinvesto
 }
 } else if (platform == "iPhone") {
 setTimeout(function () {
-window.location.href = decodeURIComponent('investorx.prod://portfolio?from=welcomesms_nti' + is_q_ios + other_param_app + external_source)
+window.location.href = decodeURIComponent('investorx.prod://portfolio' + is_q_ios + other_param_app + external_source)
 }, 2100);
 setTimeout(function () {
-window.location.href = "https://kawairy.github.io/ipets1.html?URL_START=" + encodeURIComponent(document.location.href) + "&SL_iOS_DP_OLD=" + ios_af_dp + is_q_ios + other_param_app + external_source + "&SL_WEB_LINK_iOS=" + 'http://www.sberbank.ru/ru/person/investments/broker_service/quik' + other_param_web + utm_all;
+window.location.href = "https://www.sberbank.com/sms/sl_ios_dp_old?URL_START=" + encodeURIComponent(document.location.href) + "&SL_iOS_DP_OLD=" + ios_af_dp + is_q_ios + other_param_app + external_source + "&SL_WEB_LINK_iOS=" + 'http://www.sberbank.ru/ru/person/investments/sberinvestor' + other_param_web + utm_all;
 }, 2500);
 setTimeout(function () {
-window.location.href = 'http://www.sberbank.ru/ru/person/investments/broker_service/quik' + other_param_web + utm_all;
+window.location.href = 'http://www.sberbank.ru/ru/person/investments/sberinvestor' + other_param_web + utm_all;
 }, 3000);
 } else {
 setTimeout(function () {
-window.location.href = web_link_web + other_param_web + utm_all;
+window.location.href = 'http://www.sberbank.ru/ru/person/investments/sberinvestor' + other_param_web + utm_all;
 }, 2100);
 }
+
 </script>
 <style>
  body {font-size: 20px; font-family: Arial;}
