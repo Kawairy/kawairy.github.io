@@ -106,31 +106,11 @@ var nameOffset, verOffset, ix;
 function check_platform(ua) { if (/android/gi.test(ua)) { return 'android'; } if (/iphone|ipod/gi.test(ua)) { return 'iPhone'; } return 'unknown'; }
 var platform = check_platform(navigator.userAgent);
 if (platform == "android") {
-if (navigator.userAgent.match(/Opera|OPR\//)) {
-if (web_link_web.indexOf("#") !== -1) {
 setTimeout(function () {
-window.location.href = decodeURIComponent(android_af_dp + is_q_and + other_param_app + external_source).replace(new RegExp("^android-app:\/\/", "gm"), "intent://")
+window.location.href = 'https://redirect.appmetrica.yandex.com/serve/316253957372521763'
 }, 2100);
-setTimeout(function () {
-window.location.href = web_link_web + other_param_web + utm_all;
-}, 2300);
-} else {
-setTimeout(function () {
-window.location.href = decodeURIComponent(android_af_dp + is_q_and + other_param_app + external_source).replace(new RegExp("^android-app:\/\/", "gm"), "intent://") + "#Intent;scheme=android-app;package=ru.sberbankmobile;S.browser_fallback_url=" + web_link_web + other_param_web + utm_all + ";end"
-}, 2100);
-setTimeout(function () {
-window.location.href = web_link_web + other_param_web + utm_all;
-}, 2300);
 }
-} else {
-setTimeout(function () {
-window.location.href = decodeURIComponent(android_af_dp + is_q_and + other_param_app + external_source).replace(new RegExp("^android-app:\/\/", "gm"), "intent://")
-}, 2100);
-setTimeout(function () {
-window.location.href = web_link_web + other_param_web + utm_all;
-}, 2300);
-}
-} else if (platform == "iPhone") {
+else if (platform == "iPhone") {
 setTimeout(function () {
 window.location.href = decodeURIComponent(ios_af_dp + is_q_ios + other_param_app + external_source).replace(new RegExp("^sberbankonline:\/\/", "gm"), "sbolonline://")
 }, 2100);
