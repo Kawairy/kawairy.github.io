@@ -30,8 +30,8 @@ setTimeout(() => {
     var web_link_web = web_link;
     if (typeof af_c == "undefined") { var af_c = '&c=' + af_media_source;}
     
-    var android_af_dp = encodeURIComponent(android_dp);
-    var ios_af_dp = encodeURIComponent(ios_dp);
+    var android_af_dp = android_dp;
+    var ios_af_dp = ios_dp;
     var web_url = '';
     need_web == true ? web_url = web_link : need_web;
     var utm_source_sm='', utm_medium_sm='', utm_campaign_sm='', utm_content_sm='', utm_term_sm='', ga_uid_sm='', other_param = '', other_param_app = '', other_param_web = '';
@@ -42,7 +42,7 @@ setTimeout(() => {
     var utm_cookie_arr = [getCookie('utm_source'), getCookie('utm_medium'), getCookie('utm_campaign'), getCookie('utm_content'), getCookie('utm_term')]
     var utm_arr = [];
     if (document.location.href.search(/=/) > 0) {
-    var UTM = decodeURIComponent(document.location.href.split('?').pop());
+    var UTM = document.location.href.split('?').pop();
     var utm_arr = UTM.split('&');
         var count_utm_arr = -1;
         
@@ -66,12 +66,12 @@ setTimeout(() => {
  
    
  
-    var other_param = encodeURIComponent(utm_arr.filter(v => v ).join('&'));
+    var other_param = utm_arr.filter(v => v ).join('&');
     function replaceAll(string, search, replace) {
     return string.split(search).join(replace);
     }
     if (other_param != '') {
-    var other_param_app = other_param + '%26';
+    var other_param_app = other_param + '?';
         var other_param_web = '?' + replaceAll(decodeURIComponent(utm_arr.filter(v => v).join('&')).replace(/[\+\s]/ig, '__'), '&', '%26') 
     };
     var ga_uid_fc = getCookie('_ga') || '0.0.0.0';
@@ -81,13 +81,13 @@ setTimeout(() => {
     var external_source = 'external_source%3D'+af_media_source+'-_-'+utm_source_sm+'-_-'+utm_medium_sm+'-_-'+utm_campaign_sm+'-_-'+utm_content_plus;
     external_source = external_source.length > 165 ? external_source.slice(0,165)+'-_-'+ga_uid_sm : external_source+'-_-'+ga_uid_sm;
     if (android_af_dp.search(/\?|%3F/) > 0){
-    var is_q_and = '%26';
+    var is_q_and = '&';
     } else
-    { var is_q_and = '%3F'};
+    { var is_q_and = '?'};
     if (ios_af_dp.search(/\?|%3F/) > 0){
-    var is_q_ios = '%26';
+    var is_q_ios = '&';
     } else
-    { var is_q_ios = '%3F' };
+    { var is_q_ios = '?' };
     
     var web_utm_source = utm_source_sm ? 'utm_source='+utm_source_sm : '';
     var web_utm_medium = utm_medium_sm ? '&utm_medium='+utm_medium_sm : '';
@@ -113,11 +113,12 @@ setTimeout(() => {
     var platform = check_platform(navigator.userAgent);
     function redirect(href){return window.location.href=href}
     
-    var dp_and = decodeURIComponent(android_af_dp + is_q_and + other_param_app + external_source).replace(new RegExp("^android-app:\/\/", "gm"), "intent://");
-    var dp_ios = decodeURIComponent(ios_af_dp + is_q_ios + other_param_app + external_source).replace(new RegExp("^sberbankonline:\/\/", "gm"), "sbolonline://");
+    var dp_and = android_af_dp + is_q_and + other_param_app + external_source.replace(new RegExp("^android-app:\/\/", "gm"), "intent://");
+    var dp_ios = ios_af_dp + is_q_ios + other_param_app + external_source.replace(new RegExp("^sberbankonline:\/\/", "gm"), "sbolonline://");
     var dp_web = web_link_web + other_param_web + utm_all;
     if(anchor != ''){dp_web = dp_web + anchor}
     var dp_opr_web = decodeURIComponent(web_link_web + other_param_web + utm_all).replace(new RegExp("#.*", ""), "");
+    if (typeof dataLayer == "undefined") {function push(){}} else {function push(event) {dataLayer.push('sl', af_media_source, event) }}
     if (typeof dataLayer == "undefined") {function push(){}} else {function push(event) {dataLayer.push('sl', af_media_source, event) }}
 
     if (platform == "android") {
