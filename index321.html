@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,14 +8,14 @@
 <meta property="og:title" content="СберБанк Онлайн">
 <meta property="og:type" content="article">
 <meta property="og:description" content="СберБанк Онлайн">
-<meta property="og:image" content="http://www.sberbank.ru/portalserver/static/templates/%5BBBHOST%5D/RuMasterpageTemplate/static/social-ru.png" />
-<meta name="twitter:image" content="http://www.sberbank.ru/portalserver/static/templates/%5BBBHOST%5D/RuMasterpageTemplate/static/social-ru.png" />
+<meta property="og:image" content="/portalserver/static/templates/%5BBBHOST%5D/RuMasterpageTemplate/static/social-ru.png" />
+<meta name="twitter:image" content="/portalserver/static/templates/%5BBBHOST%5D/RuMasterpageTemplate/static/social-ru.png" />
 <meta property="og:image:width" content="100" />
-<style type='text/css'>.smart_img p{margin: 0;position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%)}p {display: block;align-items: center;text-align: center;}p img { width: 50%;}@media screen and (max-width: 1000px) {p img { width: 70%;}}</style>
-<script src="https://www.sberbank.ru/common/img/uploaded/files/sms/smartlink_code/2.js"></script>
+<style type="text/css">.smart_img p{margin: 0;position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%)}p {display: block;align-items: center;text-align: center;}p img { width: 50%;}@media screen and (max-width: 1000px) {p img { width: 70%;}} </style>
+<script src="/common/img/uploaded/files/sms/smartlink_code/2.js"></script>
 </head>
 <body>
-<div class='smart_img'><p><br><img src='https://www.sberbank.ru/common/img/uploaded/files/sms/sber_logo_main.png'><br><br><br><br>Запрос обрабатывается. <br><br>Подождите несколько секунд...</p>
+<div class="smart_img"> <p> <br> <img src="/common/img/uploaded/files/sms/sber_logo_main.png"> <br> <br> <br> <br>Запрос обрабатывается.<br> <br>Подождите несколько секунд... </p>
 <script>
 var af_media_source = 'dp-website';
 var android_dp = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/products/deposit?action=create';
@@ -33,7 +31,7 @@ if (Math.floor(Math.random() * 100) >=49) {
     var web_link_web = web_link;
     var web_link_prep = new URL(web_link);
     var web_link_and = web_link.replace(new RegExp("^https:\/\/online.sberbank.ru", "gm"), "http://online.sberbank.ru")
-    var web_link_ios = 'https://sberbank.com/online/'+ web_link_prep.pathname + web_link_prep.search + web_link_prep.hash
+    var web_link_ios = 'https://www.sberbank.com/online/'+ web_link_prep.pathname + web_link_prep.search + web_link_prep.hash
 } else {
     var web_link_web = web_link;
     var web_link_and = web_link;
