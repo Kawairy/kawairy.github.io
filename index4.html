@@ -20,10 +20,10 @@
 
 <script>
 
-var sl_name = 'issue';
-var android_dp = 'https://www.sberbank.com/sms/android_store';
-var ios_dp = 'sberbankonline://mainscreen'; 
-var web_link_desk = 'https://online.sberbank.ru/CSAFront/service.do?srvUrl=/sbtsbol/private/loans/consumer%23/request';
+var sl_name = 'm2m';
+var android_dp = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/transfers/m2mPull?action=confirm';
+var ios_dp = 'sberbankonline://transfers/m2mPull?action=confirm';
+var web_link_desk = 'https://online.sberbank.ru/CSAFront/service.do?srvUrl=/sbtsbol/private/payments/fps/self?action=confirm';
 
 var need_web_and = false;
 var need_web_ios = true;
@@ -38,13 +38,13 @@ var android_app = [''];
 
 var ios_apps_dp = [''];
 
-var tp_utm_arr = ['utm_source=sms','utm_medium=sms','utm_campaign=sms_issue','','']
+var tp_utm_arr = ['','','','','']
 
-var custom_params = false;
-var params_URL = [''];
-var params_WEB = [''];
-var params_AND = [''];
-var params_IOS = [''];
+var custom_params = true;
+var params_URL = ['id'];
+var params_WEB = ['srcDocumentId'];
+var params_AND = ['id'];
+var params_IOS = ['id'];
 
 var pfa = true;
 var pfa_name = 'external_source=';
