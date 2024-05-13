@@ -17,8 +17,9 @@
 
  var platform = check_platform(), browser = getBrowser();
   //deeplink scheme filter
-  const sl_protocols = ['http://', 'https://', 'android-app://ru.sberbankmobile','sbbol://','sberinvestor://','sberbankonline://','sbermobilechat://','investsphere://','investorplus://','newinvestor://','investorx.prod://','ru.sberbank.sberinvestor://','sbbol://','ios-app-smartonline://','btripsexpenses://','sbolonline://','sberbankonline://','sbermobilechat://','sberbankidlogin://','sbolidlogin://','btripsexpenses://sbolidlogin/']
-  function check_protocol(link, allowed_protocols) {
+  function check_protocol(link) {
+    const allowed_protocols = ['http://', 'https://', 'android-app://ru.sberbankmobile','sbbol://','sberinvestor://','sberbankonline://','sbermobilechat://','investsphere://','investorplus://','newinvestor://','investorx.prod://','ru.sberbank.sberinvestor://','sbbol://','ios-app-smartonline://','btripsexpenses://','sbolonline://','sberbankonline://','sbermobilechat://','sberbankidlogin://','sbolidlogin://','btripsexpenses://sbolidlogin/']
+
      if (Array.isArray(link)) {
          for (var url of link) {
              if (!allowed_protocols.some(protocol => url.startsWith(protocol))) {
@@ -61,7 +62,7 @@
  } else {
  app_data.length > 1 ? app_final = dp + '?' + app_data : app_final = dp; 
  }
- if(check_protocol(app_final,sl_protocols)){
+ if(check_protocol(app_final)){
  return app_final;
  } else {
     return encodeURIComponent('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
@@ -130,7 +131,7 @@
     var web_final = (dp.search(/\?/) > 0) ? dp + '&' + web_temp + '&cid='+cid[0] + anchor : web_temp != '' ? dp + '?' + web_temp + '&cid='+cid[0] + anchor : dp + '?cid='+cid[0] + anchor;
     }
     }
-    if(check_protocol(web_final,sl_protocols)){
+    if(check_protocol(web_final)){
         return web_final;
         } else {
            return encodeURIComponent('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
@@ -561,7 +562,7 @@ setInterval(() => {
  
  var event_type = document.location.search.split('-__-')[1],next_app = document.location.search.split('-__-')[2],web_data = document.location.search.split('-__-')[3], web_data_back = document.location.search.split('-__-')[4];
      
-     if (next_app != '') {
+     if ((next_app != '') && (check_protocol(next_app))){
          next_app = decodeURIComponent(next_app).split(',');
          if (next_app[0].search('\\?') > 0) {
              var app_data = next_app[0] + '&' + next_app[next_app.length - 1];
