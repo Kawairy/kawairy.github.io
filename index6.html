@@ -1,35 +1,160 @@
 
+
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<link rel="icon" href="/sms/img/favicon2.ico" type="image/x-icon">
-<title>Сбербанк Онлайн</title>
-<meta name="twitter:card" content="summary_large_image">
-<meta property="og:title" content="СберБанк Онлайн">
-<meta property="og:type" content="article">
-<meta property="og:description" content="СберБанк Онлайн">
-<meta property="og:image" content="https://www.sberbank.ru/portalserver/static/templates/%5BBBHOST%5D/RuMasterpageTemplate/static/social-ru.png" />
-<meta name="twitter:image" content="https://www.sberbank.ru/portalserver/static/templates/%5BBBHOST%5D/RuMasterpageTemplate/static/social-ru.png" />
-<meta property="og:image:width" content="100" />
-<style type="text/css">.smart_img p{margin: 0;position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%)}p {display: block;align-items: center;text-align: center;}p img { width: 50%;}@media screen and (max-width: 1000px) {p img { width: 70%;}}</style>
-<script src="https://applinks.org/static/applinks.js"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://www.sberbank.com/sms/smartlink_assets/img/favicon2.ico" type="image/x-icon">
+    <title>Сбербанк Онлайн </title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:title" content="СберБанк Онлайн">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="СберБанк Онлайн">
+    <meta property="og:image" content="https://sberbank.com/sms/smartlink_assets/img/snippet_link.jpg" />
+    <meta name="twitter:image" content="https://sberbank.com/sms/smartlink_assets/img/snippet_link.jpg" />
+    <meta property="og:image:width" content="100" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="preload"
+        href="https://sberbank.com/sms/smartlink_assets/fonts/SB_Sans_Text/c68e21ad1a10803b1ef491fd0392b067.woff2"
+        as="font" type="font/woff2" crossorigin="anonymous">
+
+
+    <style type="text/css">
+        body {
+            font-size: 20px;
+            font-family: Arial;
+        }
+
+        .smart_img p {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%)
+        }
+
+        p {
+            display: block;
+            align-items: center;
+            text-align: center;
+        }
+
+        p img {
+            width: 50%;
+        }
+
+        @media screen and (max-width: 1000px) {
+            p img {
+                width: 70%;
+            }
+        }
+
+        @font-face {
+            font-family: 'SB Sans Text';
+            src: url('https://sberbank.com/sms/smartlink_assets/fonts/SB_Sans_Text/c68e21ad1a10803b1ef491fd0392b067.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .header-container {
+            position: fixed;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .header-container img {
+            height: 40px;
+        }
+
+        .image-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .image-container img {
+            height: 328px;
+        }
+
+        .logo-container {
+            position: fixed;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .button-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            font-family: 'SB Sans Text', sans-serif;
+            font-weight: 500;
+            text-align: center;
+            margin: 8px 0;
+            font-size: 15px;
+            text-decoration: none
+        }
+
+        .button-primary {
+            width: 343px;
+            height: 60px;
+            background: rgb(20, 143, 43);
+            border-radius: 20px;
+            color: rgb(255, 255, 255);
+        }
+
+        .button-secondary {
+            width: 311px;
+            height: 20px;
+            background: rgb(255, 255, 255);
+            line-height: 20px;
+            letter-spacing: -0.023em;
+            color: black;
+        }
+    </style>
+    <script src="/common/img/uploaded/files/sms/smartlink_code/add.js"></script>
 </head>
+
 <body>
-<div class="smart_img"><p><br><img src="https://www.sberbank.ru/common/img/uploaded/files/sms/sber_logo_main.png"><br><br><br><br>Запрос обрабатывается. <br><br>Подождите несколько секунд...</p>
-<script>
-if (window.navigator && window.navigator.appLinks && window.navigator.appLinks.checkMobileInstall()) {
-  // The app is installed
-  // Redirect the user to the deep link
-  window.alert = window.navigator.appLinks ;
-// } else {
-//   // The app is not installed
-//   // Show a message or redirect the user to a fallback URL
-//   window.location.href = 'https://example.com/fallback';
-}
-</script>
-<style>
- body {font-size: 20px; font-family: Arial;}
-</style>
+    <div class="smart_img">
+        <p><br><img
+                src="/common/img/uploaded/files/sms/sber_logo_main.png"><br><br><br><br>Запрос
+            обрабатывается.
+            <br><br>Подождите несколько секунд...
+        </p>
+
+        <script>
+            var sl_name = 'sbpqr';
+            var web_link_desk = 'https://online.sberbank.ru/CSAFront/service.do?srvUrl=%2Fpayments%2Fsbp';
+            var close_tab = true;
+        </script>
+
+<script src="/common/img/uploaded/files/sms/smartlink_code/qr.js"></script>
 </body>
+
 </html>
