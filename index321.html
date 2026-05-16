@@ -21,7 +21,7 @@
       flex-direction: column;
       gap: 16px;
       width: 90%;
-      max-width: 420px;
+      max-width: 460px;
     }
 
     button,
@@ -33,25 +33,36 @@
       font-size: 16px;
       line-height: 1.3;
       color: #fff;
-      background-color: #007bff;
       border: none;
       border-radius: 8px;
       cursor: pointer;
       text-align: center;
       text-decoration: none;
-      transition: background-color 0.3s;
+      transition: opacity 0.3s;
     }
 
     button:hover,
     a.test-button:hover {
-      background-color: #0056b3;
+      opacity: 0.85;
+    }
+
+    .working {
+      background-color: #28a745;
+    }
+
+    .broken {
+      background-color: #dc3545;
     }
 
     .comment {
       font-size: 13px;
       color: #555;
       text-align: center;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
+    }
+
+    .status {
+      font-weight: bold;
     }
   </style>
 </head>
@@ -60,34 +71,45 @@
 
   <div class="button-container">
 
-    <div class="comment">1. Обычный переход на kawairy.github.io</div>
-    <button onclick="window.location.href='https://kawairy.github.io/index2.html'">
-      1 — kawairy.github.io/index2.html
+    <div class="comment">
+      1. Рабочий сценарий: обычный переход на kawairy.github.io
+    </div>
+    <button
+      class="working"
+      onclick="window.location.href='https://kawairy.github.io/index2.html'"
+    >
+      <span class="status">РАБОТАЕТ</span> — kawairy.github.io/index2.html
     </button>
 
-    <div class="comment">2. Smartlink без target="_blank"</div>
+    <div class="comment">
+      2. Рабочий сценарий: Smartlink без target="_blank"
+    </div>
     <a
-      class="test-button"
+      class="test-button working"
       href="https://www.sberbank.com/sms/adskids"
       tabindex="0"
     >
-      2 — adskids без target blank
+      <span class="status">РАБОТАЕТ</span> — adskids без target blank
     </a>
 
-    <div class="comment">3. Smartlink с target="_blank"</div>
+    <div class="comment">
+      3. Нерабочий сценарий: Smartlink с target="_blank"
+    </div>
     <a
-      class="test-button"
+      class="test-button broken"
       href="https://www.sberbank.com/sms/adskids"
       target="_blank"
       tabindex="0"
     >
-      3 — adskids с target blank
+      <span class="status">НЕ РАБОТАЕТ</span> — adskids с target blank
     </a>
 
-    <div class="comment">4. Исходная dk-sbol ссылка с target="_blank"</div>
+    <div class="comment">
+      4. Нерабочий сценарий: исходная dk-sbol ссылка с target="_blank"
+    </div>
     <a
       data-test-id="Button-primary-md"
-      class="dk-sbol-button dk-sbol-button_type_primary dk-sbol-button_size_md dk-sbol-button_inline dk-sbol-controls__button-with-icon dk-sbol-controls__button-with-icon_isWhiteSvg test-button"
+      class="dk-sbol-button dk-sbol-button_type_primary dk-sbol-button_size_md dk-sbol-button_inline dk-sbol-controls__button-with-icon dk-sbol-controls__button-with-icon_isWhiteSvg test-button broken"
       href="https://www.sberbank.com/sms/adskids-website"
       target="_blank"
       tabindex="0"
@@ -99,7 +121,7 @@
           tabindex="-1"
         ></span>
         <span class="dk-sbol-button__text dk-sbol-button__text_size_md dk-sbol-button__text_iconPosition_left">
-          4 — Продолжить / dk-sbol target blank
+          <span class="status">НЕ РАБОТАЕТ</span> — Продолжить / dk-sbol target blank
         </span>
       </span>
     </a>
