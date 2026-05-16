@@ -1,45 +1,110 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Две кнопки</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
-        .button-container {
-            display: flex;
-            gap: 20px;
-        }
-        button {
-            padding: 15px 30px;
-            font-size: 16px;
-            color: white;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Тест Smartlink кнопок</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 90%;
+      max-width: 420px;
+    }
+
+    button,
+    a.test-button {
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 15px 20px;
+      font-size: 16px;
+      line-height: 1.3;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    button:hover,
+    a.test-button:hover {
+      background-color: #0056b3;
+    }
+
+    .comment {
+      font-size: 13px;
+      color: #555;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="button-container">
-    <button href='https://kawairy.github.io/index2.html'">Перейти на kawairy.github.io</button>
-    <button href="https://www.sberbank.com/sms/adskids-website">Перейти на Сбербанк</button>
-     <button href="https://www.sberbank.com/sms/adskids-website" target="_blank" tabindex="0" >Перейти на Сбербанк "target blanc" </button>
-    <a data-test-id="Button-primary-md" class="dk-sbol-button dk-sbol-button_type_primary dk-sbol-button_size_md dk-sbol-button_inline dk-sbol-controls__button-with-icon dk-sbol-controls__button-with-icon_isWhiteSvg" href="https://www.sberbank.com/sms/adskids-website" target="_blank" tabindex="0"><span class="dk-sbol-button__content"><span class="dk-sbol-icon dk-sbol-icon_size_md" aria-hidden="true" tabindex="-1"></span><span class="dk-sbol-button__text dk-sbol-button__text_size_md dk-sbol-button__text_iconPosition_left">Продолжить</span></span></a>
-</div>
+  <div class="button-container">
+
+    <div class="comment">1. Обычный переход на kawairy.github.io</div>
+    <button onclick="window.location.href='https://kawairy.github.io/index2.html'">
+      1 — kawairy.github.io/index2.html
+    </button>
+
+    <div class="comment">2. Smartlink без target="_blank"</div>
+    <a
+      class="test-button"
+      href="https://www.sberbank.com/sms/adskids"
+      tabindex="0"
+    >
+      2 — adskids без target blank
+    </a>
+
+    <div class="comment">3. Smartlink с target="_blank"</div>
+    <a
+      class="test-button"
+      href="https://www.sberbank.com/sms/adskids"
+      target="_blank"
+      tabindex="0"
+    >
+      3 — adskids с target blank
+    </a>
+
+    <div class="comment">4. Исходная dk-sbol ссылка с target="_blank"</div>
+    <a
+      data-test-id="Button-primary-md"
+      class="dk-sbol-button dk-sbol-button_type_primary dk-sbol-button_size_md dk-sbol-button_inline dk-sbol-controls__button-with-icon dk-sbol-controls__button-with-icon_isWhiteSvg test-button"
+      href="https://www.sberbank.com/sms/adskids-website"
+      target="_blank"
+      tabindex="0"
+    >
+      <span class="dk-sbol-button__content">
+        <span
+          class="dk-sbol-icon dk-sbol-icon_size_md"
+          aria-hidden="true"
+          tabindex="-1"
+        ></span>
+        <span class="dk-sbol-button__text dk-sbol-button__text_size_md dk-sbol-button__text_iconPosition_left">
+          4 — Продолжить / dk-sbol target blank
+        </span>
+      </span>
+    </a>
+
+  </div>
 
 </body>
 </html>
