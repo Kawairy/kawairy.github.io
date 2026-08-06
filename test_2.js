@@ -1,5 +1,4 @@
 // 6d49276 23.06.26
-
   function isYandexBrowserOrYaStart() {
     if (
       typeof navigator === 'undefined' ||
