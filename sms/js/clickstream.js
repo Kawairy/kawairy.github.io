@@ -8,3 +8,4 @@ setMeta({
         deviceIdUrl: 'https://visor.sberbank.ru/get',
         bufferSize: 1
     })
+
