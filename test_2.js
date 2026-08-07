@@ -20,7 +20,7 @@ function replaceSberHttpsWithHttp(value) {
     }
 
     return value.replace(
-    /https:\/\/(?:(?:www\.)?sberbank\.(?:ru|com)|online\.sberbank\.ru)(?=[:/?#]|$)/gi,
+      /https:\/\/(?:www\.)?sberbank\.(?:ru|com)(?=[:/?#]|$)/gi,
       function (url) {
         return url.replace(/^https:/i, 'http:');
       }
